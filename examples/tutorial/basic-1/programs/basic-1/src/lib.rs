@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("9B2iHh49VXYXU3JwnkQkwsGAKArYiJjopWuow12FAtZP");
 
 #[program]
 mod basic_1 {
@@ -20,13 +20,13 @@ mod basic_1 {
 
     pub fn increment(ctx: Context<Increment>) -> Result<()> {
         let my_account = &mut ctx.accounts.my_account;
-        my_account.data += data;
+        my_account.data += 1;
         Ok(())
     }
 
     pub fn decrement(ctx: Context<Decrement>) -> Result<()> {
         let my_account = &mut ctx.accounts.my_account;
-        my_account.data -= data;
+        my_account.data -= 1;
         Ok(())
     }
 }
